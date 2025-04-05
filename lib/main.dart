@@ -1,9 +1,8 @@
 import 'dart:async';
-import 'package:autochallan/Captureimage.dart';
 import 'package:flutter/material.dart';
+import 'Captureimage.dart'; // Ensure this import is correct
 
 void main() async {
-
   runApp(const MyApp());
 }
 
@@ -70,7 +69,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
           if (mounted) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => ParkingMonitorApp()),
+              MaterialPageRoute(builder: (context) => const CaptureImagePage()),
             );
           }
         });
@@ -96,7 +95,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
             SlideTransition(
               position: _slideInAnimation,
               child: Image.asset(
-                'assets/Logo1r.png',
+                'assets/Logo1r.png', // Ensure this path is correct
                 width: 250,
                 height: 250,
                 errorBuilder: (context, error, stackTrace) {
@@ -115,7 +114,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                 style: const TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,  // ✅ Correct color format
+                  color: Colors.white,
                   letterSpacing: 2.0,
                 ),
               ),
