@@ -416,10 +416,9 @@ packages:
   tensorflow_lite_flutter:
     dependency: "direct main"
     description:
-      name: tensorflow_lite_flutter
-      sha256: a54d3efb79219bab8218451089afe5af2169cb182eff38dd27011f4c6b433c2d
-      url: "https://pub.dev"
-    source: hosted
+      path: "packages/tensorflow_lite_flutter"
+      relative: true
+    source: path
     version: "2.0.1"
   term_glyph:
     dependency: transitive
