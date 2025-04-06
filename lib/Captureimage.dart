@@ -10,8 +10,6 @@ import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 List<CameraDescription> cameras = [];
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  cameras = await availableCameras();
   runApp(MyApp());
 }
 
@@ -103,15 +101,22 @@ class _CaptureImagePageState extends State<CaptureImagePage> {
   Widget build(BuildContext context) {
     if (!_cameraController!.value.isInitialized) {
       return Scaffold(
+        backgroundColor: const Color(0xFF1E3A8A), // Set background color
         body: Center(child: CircularProgressIndicator()),
       );
     }
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Vehicle Detection", style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Text(
+          "Vehicle Detection",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white, // Set the text color to white
+          ),
+        ),
         centerTitle: false,  // Align title to the left
-        backgroundColor: Colors.blue,  // Blue background
+        backgroundColor: const Color(0xFF1E3A8A), // Set AppBar color
         elevation: 0,  // Remove shadow effect
       ),
       body: Center(
@@ -171,7 +176,7 @@ class _CaptureImagePageState extends State<CaptureImagePage> {
           topRight: Radius.circular(20),
         ),
         child: BottomAppBar(
-          color: Colors.blue,  // Blue background for bottom app bar
+          color: const Color(0xFF1E3A8A), // Set BottomNavigationBar color
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(

@@ -1,8 +1,12 @@
 import 'dart:async';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'Captureimage.dart'; // Ensure this import is correct
+import 'Captureimage.dart';
 
 void main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  cameras = await availableCameras();
   runApp(const MyApp());
 }
 
@@ -17,7 +21,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color(0xFFFFD1DC), // Baby Pink Background
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
+      home:SplashScreen(),
     );
   }
 }
